@@ -39,7 +39,7 @@ public class ConfigReader {
 		else throw new RuntimeException("browser not specified in the Configuration.properties file.");
 	}
 	
-	public long getImplicitlyWait() {		
+	public static long getImplicitlyWait() {		
 		ConfigFileReader();
 		String implicitlyWait = properties.getProperty("Implicitewait");
 		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);

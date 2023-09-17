@@ -1,5 +1,7 @@
 package utils;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,7 +22,10 @@ public class CommonMethods extends ConfigReader {
 			d=new EdgeDriver();
 		}
 		d.get(getApplicationUrl());
+		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(getImplicitlyWait()));
+		d.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		d.manage().window().maximize();
+		
 		
 	}
 	
